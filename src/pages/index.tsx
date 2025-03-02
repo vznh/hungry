@@ -56,15 +56,21 @@ export default function Home() {
           <div className="mt-2">
             <input
               type="text"
-              className="border border-black mr-2 w-[300px] text-sm"
+              className="border border-black mr-2 w-[350px] text-md"
               placeholder="https://www.tiktok.com/@username/video/1234567890123456789"
               value={sUrl}
               onChange={(e) => setSUrl(e.target.value)}
             />
-            <button onClick={fnHandleConvert} className="text-base">
-              Convert
-            </button>
           </div>
+          <button onClick={fnHandleConvert} className="text-base pr-2">
+            Convert
+          </button>
+          <a
+            href="https://github.com/vznh/hungry/instructions.md"
+            className="text-gray-500 text-md hover:underline pr-2"
+          >
+            Instructions
+          </a>
         </div>
         <div className="flex">
           <p className="text-gray-500 pr-2">1</p>
