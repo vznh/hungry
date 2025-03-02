@@ -66,7 +66,7 @@ export default function Home() {
             Convert
           </button>
           <a
-            href="https://github.com/vznh/hungry/instructions.md"
+            href="https://github.com/vznh/hungry/blob/master/notes/instructions.md"
             className="text-gray-500 text-md hover:underline pr-2"
           >
             Instructions
@@ -82,13 +82,19 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="https://github.com/vznh/hungry/tos.md"
+              href="https://github.com/vznh/hungry/blob/master/README.md"
+              className="text-gray-500 text-md hover:underline pr-2"
+            >
+              README
+            </a>
+            <a
+              href="https://github.com/vznh/hungry/blob/master/notes/tos.md"
               className="text-gray-500 text-md hover:underline pr-2"
             >
               Terms of Service
             </a>
             <a
-              href="https://github.com/vznh/hungry/usage.md"
+              href="https://github.com/vznh/hungry/blob/master/notes/usage.md"
               className="text-gray-500 text-md hover:underline pr-2"
             >
               Usage
