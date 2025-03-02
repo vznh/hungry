@@ -72,25 +72,33 @@ export default function Home() {
             Instructions
           </a>
         </div>
-        <div className="flex">
-          <p className="text-gray-500 pr-2">1</p>
+        <div className="flex justify-between w-full">
+          <div className="flex">
+            <p className="text-gray-500 pr-2">1</p>
+            <a
+              href="https://github.com/vznh/hungry"
+              className="text-gray-500 text-md hover:underline pr-2"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://github.com/vznh/hungry/tos.md"
+              className="text-gray-500 text-md hover:underline pr-2"
+            >
+              Terms of Service
+            </a>
+            <a
+              href="https://github.com/vznh/hungry/usage.md"
+              className="text-gray-500 text-md hover:underline pr-2"
+            >
+              Usage
+            </a>
+          </div>
           <a
-            href="https://github.com/vznh/hungry"
+            href="https://hobin.dev"
             className="text-gray-500 text-md hover:underline pr-2"
           >
-            GitHub
-          </a>
-          <a
-            href="https://github.com/vznh/hungry/tos.md"
-            className="text-gray-500 text-md hover:underline pr-2"
-          >
-            Terms of Service
-          </a>
-          <a
-            href="https://github.com/vznh/hungry/usage.md"
-            className="text-gray-500 text-md hover:underline pr-2"
-          >
-            Usage
+            Son
           </a>
         </div>
       </div>
