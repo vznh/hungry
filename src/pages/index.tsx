@@ -75,7 +75,7 @@ export default function Home() {
         <div className="flex justify-between w-full">
           <div className="flex">
             <p className="text-gray-500 pr-2">
-              {process.env.NEXT_PUBLIC_COMMIT_COUNT}
+              {process.env.NEXT_PUBLIC_COMMIT_COUNT} commits
             </p>
             <a
               href="https://github.com/vznh/hungry"
