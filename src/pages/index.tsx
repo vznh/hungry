@@ -99,6 +99,12 @@ export default function Home() {
             >
               Usage
             </a>
+            <a
+              href="https://github.com/vznh/hungry/blob/master/LICENSE"
+              className="text-gray-500 text-md hover:underline pr-2"
+            >
+              License
+            </a>
           </div>
           <a
             href="https://hobin.dev"

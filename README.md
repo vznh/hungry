@@ -35,4 +35,4 @@ bun dev
 - All data is cleared on session end
 
 ## 📝
-MIT
+[MIT](https://github.com/vznh/hungry/blob/master/LICENSE)
