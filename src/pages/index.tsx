@@ -74,7 +74,9 @@ export default function Home() {
         </div>
         <div className="flex justify-between w-full">
           <div className="flex">
-            <p className="text-gray-500 pr-2">1</p>
+            <p className="text-gray-500 pr-2">
+              {process.env.NEXT_PUBLIC_COMMIT_COUNT}
+            </p>
             <a
               href="https://github.com/vznh/hungry"
               className="text-gray-500 text-md hover:underline pr-2"
