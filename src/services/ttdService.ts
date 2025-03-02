@@ -1,4 +1,5 @@
 // ttdService.ts
+// ttd = TikTok Download
 /*
  * Utilizes ytdlp-nodejs to accept a TikTok URL by checking if it's valid, then downloading it.
  */
@@ -9,7 +10,7 @@ import fs from "fs";
 export default async function fnDownloader(
   sTiktokUrl: string,
   sFilename = "dl.mp4",
-): Promise<string | undefined> {
+): Promise<string | boolean | undefined> {
   // think we need checks?
   //
   // let rMetadata;
@@ -47,7 +48,7 @@ export default async function fnDownloader(
       output: sOutputDir,
     });
 
-    return "Downloaded successfully.";
+    return true;
   } catch (err) {
     return (
       "Download failed. A more detailed error output: " + (err as Error).message
