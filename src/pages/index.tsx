@@ -75,13 +75,13 @@ export default function Home() {
             GitHub
           </a>
           <a
-            href="https://github.com/vznh/hungry"
+            href="https://github.com/vznh/hungry/tos.md"
             className="text-gray-500 text-md hover:underline pr-2"
           >
             Terms of Service
           </a>
           <a
-            href="https://github.com/vznh/hungry"
+            href="https://github.com/vznh/hungry/usage.md"
             className="text-gray-500 text-md hover:underline pr-2"
           >
             Usage
