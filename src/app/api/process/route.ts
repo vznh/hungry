@@ -2,20 +2,20 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import axios from 'axios';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(request: Request) {
   try {
-    const { url } = await request.json();
+    const { url, apiKey } = await request.json();
 
-    if (!url) {
+    if (!url || !apiKey) {
       return NextResponse.json(
-        { error: 'URL is required' },
+        { error: 'URL and API key are required' },
         { status: 400 }
       );
     }
+
+    const openai = new OpenAI({
+      apiKey: apiKey,
+    });
 
     // Extract video ID from URL
     const videoId = url.split('/').pop()?.split('?')[0];

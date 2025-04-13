@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [url, setUrl] = useState('');
+  const [apiKey, setApiKey] = useState('');
   const [recipe, setRecipe] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -20,7 +21,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url, apiKey }),
       });
 
       const data = await response.json();
@@ -40,17 +41,32 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-8">
-      <h1 className="text-2xl font-bold mb-4">TikTok Recipe Extractor</h1>
+      <h1 className="text-2xl font-bold mb-4">🍽️</h1>
       
-      <form onSubmit={handleSubmit} className="mb-8">
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter TikTok URL"
-          className="border p-2 w-full max-w-md"
-          required
-        />
+      <form onSubmit={handleSubmit} className="mb-8 space-y-4">
+        <div>
+          <input
+            type="text"
+            value={apiKey}
+            onChange={(e) => setApiKey(e.target.value)}
+            placeholder="Enter OpenAI API Key"
+            className="border p-2 w-full max-w-md"
+            required
+          />
+          <p className="text-sm text-gray-500 mt-1">Your API key is only used for this session and is not stored.</p>
+        </div>
+        
+        <div>
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Enter TikTok URL"
+            className="border p-2 w-full max-w-md"
+            required
+          />
+        </div>
+
         <button
           type="submit"
           disabled={loading}

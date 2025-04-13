@@ -13,9 +13,7 @@
     "next": "15.3.0",
     "openai": "^4.93.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tiktok-api": "^0.4.1",
-    "tiktok-scraper": "^1.4.36"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
