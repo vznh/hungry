@@ -2,10 +2,25 @@
 
 import { useState } from 'react';
 
+interface Ingredient {
+  amount: string;
+  unit?: string;
+  name: string;
+}
+
+interface Recipe {
+  title: string;
+  ingredients: Ingredient[];
+  instructions: string[];
+  prepTime?: string;
+  cookTime?: string;
+  servings?: number;
+}
+
 export default function Home() {
   const [url, setUrl] = useState('');
   const [apiKey, setApiKey] = useState('');
-  const [recipe, setRecipe] = useState<any>(null);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +56,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen p-8">
-      <h1 className="text-2xl font-bold mb-4">🍽️</h1>
+      <h1 className="text-2xl font-bold mb-4">TikTok Recipe Extractor</h1>
       
       <form onSubmit={handleSubmit} className="mb-8 space-y-4">
         <div>
@@ -89,7 +104,7 @@ export default function Home() {
           
           <h3 className="font-bold mt-4">Ingredients:</h3>
           <ul className="list-disc pl-5">
-            {recipe.ingredients.map((ing: any, index: number) => (
+            {recipe.ingredients.map((ing, index) => (
               <li key={index}>
                 {ing.amount} {ing.unit || ''} {ing.name}
               </li>
@@ -98,7 +113,7 @@ export default function Home() {
 
           <h3 className="font-bold mt-4">Instructions:</h3>
           <ol className="list-decimal pl-5">
-            {recipe.instructions.map((step: string, index: number) => (
+            {recipe.instructions.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>
