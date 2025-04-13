@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TikTok Recipe Extractor
 
-## Getting Started
+A simple web application that extracts recipes from TikTok videos using OpenAI's GPT-4 model.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Extract recipes from TikTok videos
+- Process video descriptions and titles
+- Generate structured recipe output
+- Simple and intuitive interface
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js and Bun installed
+- OpenAI API key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+3. Create a `.env` file in the root directory and add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Start the development server:
+   ```bash
+   bun run dev
+   ```
+2. Open your browser and navigate to `http://localhost:3000`
+3. Paste a TikTok video URL and click "Extract Recipe"
+4. View the extracted recipe in a structured format
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How It Works
 
-## Deploy on Vercel
+1. The application takes a TikTok video URL as input
+2. It fetches the video information using TikTok's oEmbed API
+3. The video title and description are processed using OpenAI's GPT-4 model
+4. The model extracts and structures the recipe information
+5. The structured recipe is displayed to the user
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Error Handling
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Invalid URLs will return a 400 error
+- Failed video processing will return a 500 error
+- Missing API keys will prevent the application from functioning
+
+## License
+
+MIT
